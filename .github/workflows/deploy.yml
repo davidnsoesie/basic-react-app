@@ -31,4 +31,4 @@ jobs:
         datadog_api_key: ${{ secrets.sandbox_api_key }}
     - run: npm i
     - run: CI=false npm run build -prod
-    - run: npx datadog-ci synthetics run-tests --apiKey "$datadog_app_key" --appKey "$datadog_api_key" -f "ci-tests/synthetics.json"
+    - run: npx datadog-ci synthetics run-tests --apiKey "datadog_api_key" --appKey "$datadog_app_key" -f "ci-tests/synthetics.json"
