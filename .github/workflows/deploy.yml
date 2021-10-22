@@ -12,11 +12,11 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 16.x]
+        node-version: [14.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -26,6 +26,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
+        env: # Or as an environment variable
+          datadog_app_key: ${{ secrets.sandbox_datadog_key }}
+          datadog_api_key: ${{ secrets.sandbox_api_key }}
+
+    - run: CI=false npm run build -prod
     - run: npm test
+    - run: datadog-ci synthetics run-tests --apiKey "$datadog_app_key" --appkey "$datadog_api_key"
