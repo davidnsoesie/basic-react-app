@@ -31,8 +31,8 @@ jobs:
         SANDBOX_API_KEY: ${{ secrets.SANDBOX_API_KEY }}
     # - run: npm i
     # - run: CI=false npm run build -prod
-    # - run: npx datadog-ci synthetics run-tests --apiKey "$datadog_api_key" --appKey "$datadog_app_key" -f "ci-tests/synthetics.json"
+    # - run: npx datadog-ci synthetics run-tests --apiKey ${{ secrets.SANDBOX_DATADOG_KEY }} --appKey ${{ secrets.SANDBOX_API_KEY }} -f "ci-tests/synthetics.json"
     - run: |
-          echo $SANDBOX_DATADOG_KEY
-          echo $SANDBOX_API_KEY
+          echo ${{ secrets.SANDBOX_API_KEY }}
+          echo ${{ secrets.SANDBOX_API_KEY }}
 
