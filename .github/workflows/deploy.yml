@@ -26,14 +26,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-      env:
-        SANDBOX_DATADOG_KEY: ${{ secrets.SANDBOX_DATADOG_KEY }}
-        SANDBOX_API_KEY: ${{ secrets.SANDBOX_API_KEY }}
     - run: npm i
     - run: CI=false npm run build -prod
-    - run: |
-      echo ${{ secrets.SANDBOX_API_KEY }}
-      echo ${{ secrets.SANDBOX_API_KEY }}
     - run: npx datadog-ci synthetics run-tests --apiKey ${{ secrets.SANDBOX_DATADOG_KEY }} --appKey ${{ secrets.SANDBOX_API_KEY }} -f "ci-tests/synthetics.json"
 
 
