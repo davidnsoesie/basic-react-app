@@ -2,7 +2,9 @@
     "tests": [
         {
             "id": "xu9-xrn-bzz",
-            "startUrl": "http://host.docker.internal:3000"
+            "config": {
+                "startUrl": "http://host.docker.internal:3000"
+            }
         }
     ]
 }

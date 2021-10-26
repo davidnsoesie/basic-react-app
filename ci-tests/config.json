@@ -1,0 +1,15 @@
+{
+    "apiKey": "<DATADOG_API_KEY>",
+    "appKey": "<DATADOG_APPLICATION_KEY>",
+    "datadogSite": "datadoghq.com",
+    "files": "{,!(node_modules)/**/}*.synthetics.json",
+    "proxy": {
+      "auth": {
+        "username": "login",
+        "password": "pwd"
+      },
+      "host": "127.0.0.1",
+      "port": 3000,
+      "protocol": "http"
+    }
+}

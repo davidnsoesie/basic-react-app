@@ -68,3 +68,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+npx datadog-ci synthetics run-tests --apiKey "b46bcd7fb835011879439c60bc74108a" --appKey "56cb6906e2c02d7cfbe13b516cfa9d61e267da0a" -f "ci-tests/synthetics.json"
