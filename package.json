@@ -19,7 +19,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "datadog-ci-synthetics": "datadog-ci synthetics run-tests"
-
   },
   "eslintConfig": {
     "extends": [
