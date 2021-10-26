@@ -1,7 +1,8 @@
 {
     "tests": [
         {
-            "id": "bmq-6k8-g4u"
+            "id": "xu9-xrn-bzz",
+            "startUrl": "http://host.docker.internal:3000"
         }
     ]
 }
