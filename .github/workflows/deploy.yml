@@ -27,12 +27,12 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
       env:
-        datadog_app_key: ${{ secrets.SANDBOX_DATADOG_KEY }}
-        datadog_api_key: ${{ secrets.SANDBOX_API_KEY }}
+        SANDBOX_DATADOG_KEY: ${{ secrets.SANDBOX_DATADOG_KEY }}
+        SANDBOX_API_KEY: ${{ secrets.SANDBOX_API_KEY }}
     # - run: npm i
     # - run: CI=false npm run build -prod
     # - run: npx datadog-ci synthetics run-tests --apiKey "$datadog_api_key" --appKey "$datadog_app_key" -f "ci-tests/synthetics.json"
     - run: |
-          echo ${#datadog_app_key}
-          echo ${#datadog_api_key}
+          echo $SANDBOX_DATADOG_KEY
+          echo $SANDBOX_API_KEY
 
